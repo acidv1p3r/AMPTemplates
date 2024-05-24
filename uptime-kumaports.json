@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "Both",
+        "Port": "3001",
+        "Name": "Uptime Kuma Web Port",
+        "Description": "Port used for web panel",
+        "Ref": ""
+    }
+]
