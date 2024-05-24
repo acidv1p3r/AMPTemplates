@@ -1,0 +1,20 @@
+[
+  {
+    "ConfigFile": "./settings.json",
+    "AutoMap": false,
+    "ConfigType": "kvp",
+    "ConfigFormat": "{0} = '{1}'",
+    "Importable": true,
+    "Subsections": [
+      {
+        "Heading": "$root",
+        "SettingMappings": {
+          "token": "token",
+          "prefix": "prefix",
+          "owner": "owner",
+          "coowner": "coowner"
+        }
+      }
+    ]
+  }
+]
