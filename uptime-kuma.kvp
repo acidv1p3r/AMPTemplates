@@ -1,5 +1,5 @@
-Meta.DisplayName=Uptime Kuma
-Meta.Description=Uptime Kuma
+Meta.DisplayName=UptimeKuma
+Meta.Description=UptimeKuma
 Meta.Arch=x86_64
 Meta.Author=acidv1p3r - Made with AMP Config Generator
 Meta.URL=
@@ -13,7 +13,7 @@ Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$SteamQuery
 App.AdminMethod=PinballWizard
 App.HasReadableConsole=true
 App.HasWritableConsole=true
-App.DisplayName=Uptime Kuma
+App.DisplayName=UptimeKuma
 App.CommandLineArgs={{$PlatformArgs}} {{$FormattedArgs}}
 App.WindowsCommandLineArgs=
 App.CommandLineParameterFormat=-{0} "{1}"
