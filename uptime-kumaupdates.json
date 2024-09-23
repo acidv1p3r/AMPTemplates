@@ -1,17 +1,10 @@
 [
   {
-    "UpdateStageName": "Pull Uptime Kuma Docker Image",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker pull louislam/uptime-kuma\""
-  },
-  {
     "UpdateStageName": "Create Uptime Kuma Docker Container",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker run -d --restart=always --name uptime-kuma -p 3001:3001 -v {{$FullBaseDir}}/uptime-kuma/data:/app/data louislam/uptime-kuma\""
+    "UpdateSourceArgs": "-c \"docker run -d --restart=always --name uptime-kuma -p 3001:3001 -v {{$FullBaseDir}}/uptime-kuma/data:/app/data cubecoders/ampbase\""
   },
   {
     "UpdateStageName": "Start Uptime Kuma Container",
