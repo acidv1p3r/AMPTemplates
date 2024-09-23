@@ -14,13 +14,6 @@
     "UpdateSourceArgs": "-c \"docker run -d --restart=always --name uptime-kuma -p 3001:3001 -v {{$FullBaseDir}}/uptime-kuma/data:/app/data louislam/uptime-kuma\""
   },
   {
-    "UpdateStageName": "Set Up Environment Variables",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker exec uptime-kuma /bin/bash -c 'echo \"YOUR_ENV_VARIABLE=value\" >> /app/data/.env'\""
-  },
-  {
     "UpdateStageName": "Start Uptime Kuma Container",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
