@@ -17,7 +17,6 @@ Meta.ContainerPolicyReason=Recommended for isolated monitoring environments.
 Meta.Prerequsites=[]
 Meta.ConfigReleaseState=Stable
 Meta.NoCommercialUsage=False
-
 App.DisplayName=Uptime Kuma
 App.RootDir=./uptime-kuma/
 App.BaseDirectory=./uptime-kuma/
