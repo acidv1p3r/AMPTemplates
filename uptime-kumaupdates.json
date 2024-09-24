@@ -1,23 +1,9 @@
 [
   {
-    "UpdateStageName": "Pull Uptime Kuma Docker Image",
+    "UpdateStageName": "Install Dependencies",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker pull louislam/uptime-kuma\""
-  },
-  {
-    "UpdateStageName": "Create Uptime Kuma Docker Container",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker run -d --restart=always --name uptime-kuma -p 3001:3001 -v {{$FullBaseDir}}/uptime-kuma/data:/app/data louislam/uptime-kuma\""
-  },
-  {
-    "UpdateStageName": "Start Uptime Kuma Container",
-    "UpdateSourcePlatform": "Linux",
-    "UpdateSource": "Executable",
-    "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "-c \"docker start uptime-kuma\""
+    "UpdateSourceData": "/usr/bin/npm",
+    "UpdateSourceArgs": "install"
   }
 ]
