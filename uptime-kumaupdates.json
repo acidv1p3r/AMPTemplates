@@ -1,9 +1,5 @@
 [
   {
-  "version": "1.0.0",
-  "lastUpdateCheck": "2024-09-24"
-  }
-  {
     "UpdateStageName": "Install Node.js and NPM",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
