@@ -50,31 +50,5 @@
     "IncludeInCommandLine": false,
     "DefaultValue": "",
     "Placeholder": "https://discord.com/api/webhooks/..."
-  },
-  {
-    "DisplayName": "Uptime Kuma Admin Username",
-    "Category": "Uptime Kuma Settings",
-    "Description": "Set the username for accessing the Uptime Kuma admin panel.",
-    "Keywords": "admin,username",
-    "FieldName": "adminUsername",
-    "InputType": "text",
-    "IsFlagArgument": false,
-    "ParamFieldName": "adminUsername",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "admin",
-    "Placeholder": "admin"
-  },
-  {
-    "DisplayName": "Uptime Kuma Admin Password",
-    "Category": "Uptime Kuma Settings",
-    "Description": "Set the password for accessing the Uptime Kuma admin panel.",
-    "Keywords": "admin,password",
-    "FieldName": "adminPassword",
-    "InputType": "password",
-    "IsFlagArgument": false,
-    "ParamFieldName": "adminPassword",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "",
-    "Placeholder": "your-secure-password"
   }
 ]
