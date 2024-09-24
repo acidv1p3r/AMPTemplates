@@ -1,9 +1,30 @@
 [
   {
+    "UpdateStageName": "Install Node.js and NPM",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"sudo apt-get update && sudo apt-get install -y nodejs npm\""
+  },
+  {
+    "UpdateStageName": "Clone Uptime Kuma Repository",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"git clone https://github.com/louislam/uptime-kuma.git {{$FullBaseDir}}uptime-kuma\""
+  },
+  {
     "UpdateStageName": "Install Dependencies",
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
-    "UpdateSourceData": "/usr/bin/npm",
-    "UpdateSourceArgs": "install"
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}}uptime-kuma && npm install\""
+  },
+  {
+    "UpdateStageName": "Build Application",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}}uptime-kuma && npm run build\""
   }
 ]
