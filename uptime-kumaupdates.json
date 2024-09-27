@@ -1,5 +1,13 @@
 [
     {
+        "UpdateStageName": "Install Required Packages",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'apt-get update && apt-get install -y git npm nodejs'",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Create Server Directory",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CreateDirectory",
