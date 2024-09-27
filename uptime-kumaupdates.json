@@ -16,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'sudo apt-get update && sudo apt-get install -y git nodejs npm'",
+        "UpdateSourceArgs": "-c 'apt-get update && apt-get install -y git nodejs npm'",
         "SkipOnFailure": false
     },
     {
