@@ -1,80 +1,66 @@
 [
-  {
-    "DisplayName": "Monitoring Target URL",
-    "Category": "Uptime Monitor Settings",
-    "Description": "Enter the URL you want to monitor. Uptime Kuma will regularly check this URL for availability.",
-    "Keywords": "url,monitor,uptime",
-    "FieldName": "monitorUrl",
-    "InputType": "text",
-    "IsFlagArgument": false,
-    "ParamFieldName": "monitorUrl",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "",
-    "Placeholder": "https://example.com"
-  },
-  {
-    "DisplayName": "Monitor Interval",
-    "Category": "Uptime Monitor Settings",
-    "Description": "Set the interval (in minutes) at which Uptime Kuma will check the availability of the target URL.",
-    "Keywords": "interval,check",
-    "FieldName": "monitorInterval",
-    "InputType": "number",
-    "IsFlagArgument": false,
-    "ParamFieldName": "monitorInterval",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "5",
-    "Placeholder": "5"
-  },
-  {
-    "DisplayName": "Notification Email",
-    "Category": "Notification Settings",
-    "Description": "Provide the email address where notifications about downtime or issues should be sent.",
-    "Keywords": "email,notification",
-    "FieldName": "notificationEmail",
-    "InputType": "text",
-    "IsFlagArgument": false,
-    "ParamFieldName": "notificationEmail",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "",
-    "Placeholder": "user@example.com"
-  },
-  {
-    "DisplayName": "Discord Webhook URL",
-    "Category": "Notification Settings",
-    "Description": "Enter the Discord webhook URL to receive downtime or issue notifications.",
-    "Keywords": "discord,webhook,notification",
-    "FieldName": "discordWebhook",
-    "InputType": "text",
-    "IsFlagArgument": false,
-    "ParamFieldName": "discordWebhook",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "",
-    "Placeholder": "https://discord.com/api/webhooks/..."
-  },
-  {
-    "DisplayName": "Uptime Kuma Admin Username",
-    "Category": "Uptime Kuma Settings",
-    "Description": "Set the username for accessing the Uptime Kuma admin panel.",
-    "Keywords": "admin,username",
-    "FieldName": "adminUsername",
-    "InputType": "text",
-    "IsFlagArgument": false,
-    "ParamFieldName": "adminUsername",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "admin",
-    "Placeholder": "admin"
-  },
-  {
-    "DisplayName": "Uptime Kuma Admin Password",
-    "Category": "Uptime Kuma Settings",
-    "Description": "Set the password for accessing the Uptime Kuma admin panel.",
-    "Keywords": "admin,password",
-    "FieldName": "adminPassword",
-    "InputType": "password",
-    "IsFlagArgument": false,
-    "ParamFieldName": "adminPassword",
-    "IncludeInCommandLine": false,
-    "DefaultValue": "",
-    "Placeholder": "your-secure-password"
-  }
+    {
+        "DisplayName": "Additional Command Line Options",
+        "Category": "Uptime Kuma:server",
+        "Subcategory": "Server Settings:settings:1",
+        "Description": "Specifies additional command line options for Uptime Kuma. Use with care.",
+        "Keywords": "custom,server,options,arguments",
+        "FieldName": "CustomServerOptions",
+        "InputType": "Textarea",
+        "ParamFieldName": "CustomServerOptions",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Type",
+        "Category": "Uptime Kuma:database",
+        "Subcategory": "Database Settings:settings:1",
+        "Description": "Select the database type for Uptime Kuma.",
+        "Keywords": "database,type,selection",
+        "FieldName": "DatabaseType",
+        "InputType": "Dropdown",
+        "ParamFieldName": "DatabaseType",
+        "DefaultValue": "sqlite3",
+        "EnumValues": {
+            "sqlite3": "SQLite3",
+            "mysql": "MySQL",
+            "postgresql": "PostgreSQL"
+        }
+    },
+    {
+        "DisplayName": "Database Path",
+        "Category": "Uptime Kuma:database",
+        "Subcategory": "Database Settings:settings:2",
+        "Description": "Path for the SQLite3 database file.",
+        "Keywords": "database,path",
+        "FieldName": "DatabasePath",
+        "InputType": "Text",
+        "ParamFieldName": "DatabasePath",
+        "DefaultValue": "./database.sqlite3",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Host",
+        "Category": "Uptime Kuma:server",
+        "Subcategory": "Server Settings:settings:3",
+        "Description": "Host address for the Uptime Kuma server.",
+        "Keywords": "host,address",
+        "FieldName": "ServerHost",
+        "InputType": "Text",
+        "ParamFieldName": "ServerHost",
+        "DefaultValue": "0.0.0.0",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Server Port",
+        "Category": "Uptime Kuma:server",
+        "Subcategory": "Server Settings:settings:4",
+        "Description": "Port for the Uptime Kuma server.",
+        "Keywords": "port",
+        "FieldName": "ServerPort",
+        "InputType": "Number",
+        "ParamFieldName": "ServerPort",
+        "DefaultValue": "3001",
+        "EnumValues": {}
+    }
 ]
