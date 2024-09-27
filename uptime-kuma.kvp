@@ -1,85 +1,95 @@
-Meta.DisplayName=Uptime Kuma
-Meta.Description=A fancy self-hosted monitoring tool
-Meta.OS=Linux
-Meta.Arch=x86_64
-Meta.Author=Louis Lam
-Meta.URL=https://github.com/louislam/uptime-kuma
-Meta.DisplayImageSource=url:https://github.com/louislam/uptime-kuma/raw/master/public/icon.png
-Meta.EndpointURIFormat=http://{0}:3001
-Meta.ConfigManifest=uptime-kuma_config.json
-Meta.MetaConfigManifest=uptime-kuma_metaconfig.json
-Meta.ConfigRoot=uptime-kuma.kvp
-Meta.MinAMPVersion=2.4.6.6
-Meta.SpecificDockerImage=louislam/uptime-kuma:latest
-Meta.DockerRequired=True
-Meta.ContainerPolicy=Recommended
-Meta.ContainerPolicyReason=Recommended for isolated monitoring environments.
-Meta.Prerequsites=[]
-Meta.ConfigReleaseState=Stable
-Meta.NoCommercialUsage=False
-Meta.AppConfigId=your-unique-app-config-id
-Volumes=/home/amp/.ampdata/instances/UptimeKuma01:/AMP
-App.DisplayName=Uptime Kuma
-App.RootDir=./uptime-kuma/
-App.BaseDirectory=./uptime-kuma/
-App.ExecutableLinux=docker
-App.WorkingDir=./uptime-kuma/
-App.LinuxCommandLineArgs=run -d -p 3001:3001 louislam/uptime-kuma:latest
-App.WindowsCommandLineArgs=
-App.CommandLineArgs=
-App.UseLinuxIOREDIR=False
-App.AppSettings={}
-App.EnvironmentVariables={}
-App.CommandLineParameterFormat=+{0} {1}
-App.CommandLineParameterDelimiter=
-App.ExitMethod=OS_CLOSE
-App.ExitTimeout=30
-App.ExitString=stop
-App.ExitFile=app_exit.lck
-App.HasWriteableConsole=True
-App.HasReadableConsole=True
-App.SupportsLiveSettingsChanges=False
-App.LiveSettingChangeCommandFormat=set {0} "{1}"
-App.ApplicationIPBinding=0.0.0.0
-App.Ports=[{"Protocol":"TCP","Port":3001,"Ref":"Port","Name":"Web Interface","Description":"Uptime Kuma Web Interface"}]
-App.AdminPortRef=Port
-App.PrimaryApplicationPortRef=Port
-App.MaxUsers=10
-App.UseRandomAdminPassword=False
-App.RemoteAdminPassword=AdminPass
-App.AdminMethod=STDIO
-App.AdminLoginTransform=None
-App.RCONConnectDelaySeconds=5
-App.RCONConnectRetrySeconds=5
-App.RCONHeartbeatMinutes=0
-App.RCONHeartbeatCommand=ping
-App.TelnetLoginFormat={0}
-App.UpdateSources=@IncludeJson[uptime-kumaupdates.json]  ; Ensure this line is included
-App.PreStartStages=[{"UpdateStageName":"Docker Setup","UpdateSourcePlatform":"Linux","UpdateSource":"Executable","UpdateSourceData":"/usr/bin/docker","UpdateSourceArgs":"pull louislam/uptime-kuma:latest"}]
-App.Compatibility=None
-App.MonitorChildProcess=True
-App.MonitorChildProcessWaitMs=100
-App.MonitorChildProcessName=
-App.SupportsUniversalSleep=False
-App.WakeupMode=Any
-App.ApplicationReadyMode=Immediate
-App.TemplateMatchRegex={{(\$?[\w]+)}}
-Console.FilterMatchRegex=\e\[(\d+;)*(\d+)?[ABCDHJKfmsu]|\e\[?[?\>\=\da-z]+
-Console.FilterMatchReplacement=
-Console.ThrowawayMessageRegex=
-Console.AppReadyRegex=
-Console.UserJoinRegex=
-Console.UserLeaveRegex=
-Console.UserChatRegex=
-Console.UpdateAvailableRegex=
-Console.MetricsRegex=
-Console.SuppressLogAtStart=False
-Console.ActivateLogRegex=
-Console.UserActions={}
-Limits.SleepMode=True
-Limits.SleepOnStart=False
-Limits.SleepDelayMinutes=5
-Limits.DozeDelay=2
-Limits.AutoRetryCount=5
-Limits.SleepStartThresholdSeconds=25
-Meta.AppConfigId=fcc9c96b-79bb-4bde-9659-bc499fea1234
+{
+    "Meta": {
+        "DisplayName": "Uptime Kuma",
+        "Description": "A fancy self-hosted monitoring tool",
+        "OS": "Linux",
+        "Arch": "x86_64",
+        "Author": "Louis Lam",
+        "URL": "https://github.com/louislam/uptime-kuma",
+        "DisplayImageSource": "url:https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
+        "EndpointURIFormat": "http://{0}:3001",
+        "ConfigManifest": "uptime-kuma_config.json",
+        "MetaConfigManifest": "uptime-kuma_metaconfig.json",
+        "ConfigRoot": "uptime-kuma.kvp",
+        "MinAMPVersion": "2.4.6.6",
+        "SpecificDockerImage": "louislam/uptime-kuma:latest",
+        "DockerRequired": true,
+        "ContainerPolicy": "Recommended",
+        "ContainerPolicyReason": "Recommended for isolated monitoring environments.",
+        "Prerequsites": [],
+        "ConfigReleaseState": "Stable",
+        "NoCommercialUsage": false
+    },
+    "App": {
+        "DisplayName": "Uptime Kuma",
+        "RootDir": "./uptime-kuma/",
+        "BaseDirectory": "./uptime-kuma/",
+        "ExecutableLinux": "docker",
+        "WorkingDir": "./uptime-kuma/",
+        "LinuxCommandLineArgs": "run -d -p 3001:3001 louislam/uptime-kuma:latest",
+        "WindowsCommandLineArgs": "",
+        "CommandLineArgs": "",
+        "UseLinuxIOREDIR": false,
+        "AppSettings": {},
+        "EnvironmentVariables": {},
+        "CommandLineParameterFormat": "+{0} {1}",
+        "CommandLineParameterDelimiter": "",
+        "ExitMethod": "OS_CLOSE",
+        "ExitTimeout": 30,
+        "ExitString": "stop",
+        "ExitFile": "app_exit.lck",
+        "HasWriteableConsole": true,
+        "HasReadableConsole": true,
+        "SupportsLiveSettingsChanges": false,
+        "LiveSettingChangeCommandFormat": "set {0} \"{1}\"",
+        "ApplicationIPBinding": "0.0.0.0",
+        "Ports": [{"Protocol":"TCP","Port":3001,"Ref":"Port","Name":"Web Interface","Description":"Uptime Kuma Web Interface"}],
+        "AdminPortRef": "Port",
+        "PrimaryApplicationPortRef": "Port",
+        "MaxUsers": 10,
+        "UseRandomAdminPassword": false,
+        "RemoteAdminPassword": "AdminPass",
+        "AdminMethod": "STDIO",
+        "AdminLoginTransform": null,
+        "RCONConnectDelaySeconds": 5,
+        "RCONConnectRetrySeconds": 5,
+        "RCONHeartbeatMinutes": 0,
+        "RCONHeartbeatCommand": "ping",
+        "TelnetLoginFormat": "{0}",
+        "UpdateSources": "@IncludeJson[uptime-kumaupdates.json]",
+        "PreStartStages": [{"UpdateStageName":"Docker Setup","UpdateSourcePlatform":"Linux","UpdateSource":"Executable","UpdateSourceData":"/usr/bin/docker","UpdateSourceArgs":"pull louislam/uptime-kuma:latest"}],
+        "Compatibility": null,
+        "MonitorChildProcess": true,
+        "MonitorChildProcessWaitMs": 100,
+        "MonitorChildProcessName": "",
+        "SupportsUniversalSleep": false,
+        "WakeupMode": "Any",
+        "ApplicationReadyMode": "Immediate",
+        "TemplateMatchRegex": "{{(\\$?[\\w]+)}}",
+        "Console": {
+            "FilterMatchRegex": "\\e\\[(\\d+;)*(\\d+)?[ABCDHJKfmsu]|\\e\\[?[?\\>\\=\\da-z]+",
+            "FilterMatchReplacement": "",
+            "ThrowawayMessageRegex": "",
+            "AppReadyRegex": "",
+            "UserJoinRegex": "",
+            "UserLeaveRegex": "",
+            "UserChatRegex": "",
+            "UpdateAvailableRegex": "",
+            "MetricsRegex": "",
+            "SuppressLogAtStart": false,
+            "ActivateLogRegex": ""
+        },
+        "UserActions": {},
+        "Limits": {
+            "SleepMode": true,
+            "SleepOnStart": false,
+            "SleepDelayMinutes": 5,
+            "DozeDelay": 2,
+            "AutoRetryCount": 5,
+            "SleepStartThresholdSeconds": 25
+        },
+        "Meta": {
+            "AppConfigId": "fcc9c96b-79bb-4bde-9659-bc499fea1234"
+        }
+    }
+}
