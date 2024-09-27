@@ -1,5 +1,13 @@
 [
     {
+        "UpdateStageName": "Create Missing Directories",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c '[ ! -d /var/lib/apt/lists/partial ] && mkdir -p /var/lib/apt/lists/partial && chmod -R 755 /var/lib/apt/lists'",
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Install Required Packages",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
