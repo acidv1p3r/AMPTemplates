@@ -16,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && git clone https://github.com/louislam/uptime-kuma.git .'",
+        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && git clone https://github.com/louislam/uptime-kuma.git .\"",
         "SkipOnFailure": false
     },
     {
@@ -24,7 +24,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && [ -d .git ] && git pull || exit 0'",
+        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && [ -d .git ] && git pull || exit 0\"",
         "SkipOnFailure": false
     },
     {
@@ -32,7 +32,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && npm install'",
+        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && npm install\"",
         "SkipOnFailure": false
     },
     {
@@ -40,7 +40,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && npm run setup'",
+        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && npm run setup\"",
         "SkipOnFailure": false
     }
 ]
