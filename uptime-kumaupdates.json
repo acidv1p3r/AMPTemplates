@@ -1,21 +1,5 @@
 [
     {
-        "UpdateStageName": "Create Missing Directories",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c '[ ! -d /var/lib/apt/lists/partial ] && mkdir -p /var/lib/apt/lists/partial && chmod -R 755 /var/lib/apt/lists'",
-        "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Install Required Packages",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'apt-get update && apt-get install -y git npm nodejs'",
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Create Server Directory",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CreateDirectory",
@@ -32,7 +16,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && git clone https://github.com/louislam/uptime-kuma.git .\"",
+        "UpdateSourceArgs": "-c \"su -c 'git clone https://github.com/louislam/uptime-kuma.git {{ $FullBaseDir }}server'\"",
         "SkipOnFailure": false
     },
     {
@@ -40,7 +24,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && [ -d .git ] && git pull || exit 0\"",
+        "UpdateSourceArgs": "-c \"su -c 'cd {{ $FullBaseDir }}server && [ -d .git ] && git pull || exit 0'\"",
         "SkipOnFailure": false
     },
     {
@@ -48,7 +32,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && npm install\"",
+        "UpdateSourceArgs": "-c \"su -c 'cd {{ $FullBaseDir }}server && npm install'\"",
         "SkipOnFailure": false
     },
     {
@@ -56,7 +40,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd '{{ $FullBaseDir }}server' && npm run setup\"",
+        "UpdateSourceArgs": "-c \"su -c 'cd {{ $FullBaseDir }}server && npm run setup'\"",
         "SkipOnFailure": false
     }
 ]
