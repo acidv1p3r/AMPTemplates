@@ -1,1 +1,19 @@
-[]
+[
+    {
+        "ConfigFile": "config.json",
+        "ConfigType": "json",
+        "ConfigFormat": "{0}{1}",
+        "Subsections": [
+            {
+                "Heading": "$root",
+                "SettingMappings": {
+                    "DatabaseType": "database.type",
+                    "DatabasePath": "database.path",
+                    "ServerHost": "server.host",
+                    "ServerPort": "server.port",
+                    "CustomServerOptions": "custom.server.options"
+                }
+            }
+        ]
+    }
+]
