@@ -1,9 +1,9 @@
 [
     {
         "DisplayName": "Additional Command Line Options",
-        "Category": "Uptime Kuma:server",
+        "Category": "Uptime Kuma: Server",
         "Subcategory": "Server Settings:settings:1",
-        "Description": "Specifies additional command line options for Uptime Kuma. Use with care.",
+        "Description": "Specify additional command line options for Uptime Kuma.",
         "Keywords": "custom,server,options,arguments",
         "FieldName": "CustomServerOptions",
         "InputType": "Textarea",
