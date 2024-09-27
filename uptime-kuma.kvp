@@ -1,95 +1,38 @@
-{
-    "Meta": {
-        "DisplayName": "Uptime Kuma",
-        "Description": "A fancy self-hosted monitoring tool",
-        "OS": "Linux",
-        "Arch": "x86_64",
-        "Author": "Louis Lam",
-        "URL": "https://github.com/louislam/uptime-kuma",
-        "DisplayImageSource": "url:https://github.com/louislam/uptime-kuma/raw/master/public/icon.png",
-        "EndpointURIFormat": "http://{0}:3001",
-        "ConfigManifest": "uptime-kuma_config.json",
-        "MetaConfigManifest": "uptime-kuma_metaconfig.json",
-        "ConfigRoot": "uptime-kuma.kvp",
-        "MinAMPVersion": "2.4.6.6",
-        "SpecificDockerImage": "louislam/uptime-kuma:latest",
-        "DockerRequired": true,
-        "ContainerPolicy": "Recommended",
-        "ContainerPolicyReason": "Recommended for isolated monitoring environments.",
-        "Prerequsites": [],
-        "ConfigReleaseState": "Stable",
-        "NoCommercialUsage": false
-    },
-    "App": {
-        "DisplayName": "Uptime Kuma",
-        "RootDir": "./uptime-kuma/",
-        "BaseDirectory": "./uptime-kuma/",
-        "ExecutableLinux": "docker",
-        "WorkingDir": "./uptime-kuma/",
-        "LinuxCommandLineArgs": "run -d -p 3001:3001 louislam/uptime-kuma:latest",
-        "WindowsCommandLineArgs": "",
-        "CommandLineArgs": "",
-        "UseLinuxIOREDIR": false,
-        "AppSettings": {},
-        "EnvironmentVariables": {},
-        "CommandLineParameterFormat": "+{0} {1}",
-        "CommandLineParameterDelimiter": "",
-        "ExitMethod": "OS_CLOSE",
-        "ExitTimeout": 30,
-        "ExitString": "stop",
-        "ExitFile": "app_exit.lck",
-        "HasWriteableConsole": true,
-        "HasReadableConsole": true,
-        "SupportsLiveSettingsChanges": false,
-        "LiveSettingChangeCommandFormat": "set {0} \"{1}\"",
-        "ApplicationIPBinding": "0.0.0.0",
-        "Ports": [{"Protocol":"TCP","Port":3001,"Ref":"Port","Name":"Web Interface","Description":"Uptime Kuma Web Interface"}],
-        "AdminPortRef": "Port",
-        "PrimaryApplicationPortRef": "Port",
-        "MaxUsers": 10,
-        "UseRandomAdminPassword": false,
-        "RemoteAdminPassword": "AdminPass",
-        "AdminMethod": "STDIO",
-        "AdminLoginTransform": null,
-        "RCONConnectDelaySeconds": 5,
-        "RCONConnectRetrySeconds": 5,
-        "RCONHeartbeatMinutes": 0,
-        "RCONHeartbeatCommand": "ping",
-        "TelnetLoginFormat": "{0}",
-        "UpdateSources": "@IncludeJson[uptime-kumaupdates.json]",
-        "PreStartStages": [{"UpdateStageName":"Docker Setup","UpdateSourcePlatform":"Linux","UpdateSource":"Executable","UpdateSourceData":"/usr/bin/docker","UpdateSourceArgs":"pull louislam/uptime-kuma:latest"}],
-        "Compatibility": null,
-        "MonitorChildProcess": true,
-        "MonitorChildProcessWaitMs": 100,
-        "MonitorChildProcessName": "",
-        "SupportsUniversalSleep": false,
-        "WakeupMode": "Any",
-        "ApplicationReadyMode": "Immediate",
-        "TemplateMatchRegex": "{{(\\$?[\\w]+)}}",
-        "Console": {
-            "FilterMatchRegex": "\\e\\[(\\d+;)*(\\d+)?[ABCDHJKfmsu]|\\e\\[?[?\\>\\=\\da-z]+",
-            "FilterMatchReplacement": "",
-            "ThrowawayMessageRegex": "",
-            "AppReadyRegex": "",
-            "UserJoinRegex": "",
-            "UserLeaveRegex": "",
-            "UserChatRegex": "",
-            "UpdateAvailableRegex": "",
-            "MetricsRegex": "",
-            "SuppressLogAtStart": false,
-            "ActivateLogRegex": ""
-        },
-        "UserActions": {},
-        "Limits": {
-            "SleepMode": true,
-            "SleepOnStart": false,
-            "SleepDelayMinutes": 5,
-            "DozeDelay": 2,
-            "AutoRetryCount": 5,
-            "SleepStartThresholdSeconds": 25
-        },
-        "Meta": {
-            "AppConfigId": "fcc9c96b-79bb-4bde-9659-bc499fea1234"
-        }
-    }
-}
+Meta.DisplayName=Uptime Kuma
+Meta.Description=Uptime Kuma Service Instance
+Meta.OS=Windows, Linux
+Meta.AarchSupport=Native
+Meta.Arch=All
+Meta.Author=YourName
+Meta.URL=https://uptime.kuma.io/
+Meta.DisplayImageSource=url:https://raw.githubusercontent.com/louislam/uptime-kuma/master/resources/logo.png
+Meta.EndpointURIFormat= 
+Meta.ConfigManifest=uptime-kumaconfig.json
+Meta.MetaConfigManifest=uptime-kumametaconfig.json
+Meta.ConfigRoot=uptime-kuma.kvp
+Meta.MinAMPVersion=2.5.1.6
+Meta.SpecificDockerImage=
+Meta.DockerRequired=False
+Meta.DockerBaseReadOnly=False
+Meta.ContainerPolicy=SupportedOnWindows, RecommendedOnLinux
+Meta.ConfigReleaseState=NotSpecified
+Meta.NoCommercialUsage=False
+Meta.ConfigVersion=0.1
+Meta.ReleaseNotes=
+Meta.BreakingReleaseNotes=
+Meta.AppConfigId=your-app-config-id
+Meta.ImportableExtensions=[]
+App.DisplayName=Uptime Kuma
+App.RootDir=./uptime-kuma/
+App.BaseDirectory=./uptime-kuma/
+App.ExecutableWin=server\bin\uptime-kuma.exe
+App.ExecutableLinux=server/bin/uptime-kuma
+App.WorkingDir=server
+App.CommandLineArgs={{$PlatformArgs}} --database=sqlite3 --config=../config.json
+App.ExitMethod=Kill
+App.ExitTimeout=15
+App.HasWriteableConsole=True
+App.HasReadableConsole=True
+App.MaxUsers=1
+App.Ports=@IncludeJson[uptime-kumaports.json]
+App.UpdateSources=@IncludeJson[uptime-kumaupdates.json]
