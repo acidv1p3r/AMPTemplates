@@ -1,38 +1,46 @@
 [
     {
         "UpdateStageName": "Create Server Directory",
-        "UpdateSourcePlatform": "All",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CreateDirectory",
         "UpdateSourceArgs": "{{ $FullBaseDir }}server"
     },
     {
         "UpdateStageName": "Create Data Directory",
-        "UpdateSourcePlatform": "All",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CreateDirectory",
         "UpdateSourceArgs": "{{ $FullBaseDir }}data"
     },
     {
-        "UpdateStageName": "Uptime Kuma Installation",
+        "UpdateStageName": "Install Dependencies",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'cd server && git clone https://github.com/louislam/uptime-kuma.git . && npm install && npm run setup'",
+        "UpdateSourceArgs": "-c 'sudo apt-get update && sudo apt-get install -y git nodejs npm'",
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Uptime Kuma Installation",
-        "UpdateSourcePlatform": "Windows",
+        "UpdateStageName": "Clone Uptime Kuma Repository",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"Set-Location -Path 'server'; git clone https://github.com/louislam/uptime-kuma.git .; npm install; npm run setup\"",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && git clone https://github.com/louislam/uptime-kuma.git .'",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Install Uptime Kuma",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && npm install'",
         "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Initialize Uptime Kuma",
-        "UpdateSourcePlatform": "All",
+        "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "node",
-        "UpdateSourceArgs": "{{ $FullBaseDir }}server/server.js",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && npm run setup'",
         "SkipOnFailure": false
     }
 ]
