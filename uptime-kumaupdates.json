@@ -12,19 +12,19 @@
         "UpdateSourceArgs": "{{ $FullBaseDir }}data"
     },
     {
-        "UpdateStageName": "Install Dependencies",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'apt-get update && apt-get install -y git nodejs npm'",
-        "SkipOnFailure": false
-    },
-    {
         "UpdateStageName": "Clone Uptime Kuma Repository",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && git clone https://github.com/louislam/uptime-kuma.git .'",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Check for Existing Repository",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'cd {{ $FullBaseDir }}server && [ -d .git ] && git pull || exit 0'",
         "SkipOnFailure": false
     },
     {
