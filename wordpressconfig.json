@@ -1,0 +1,86 @@
+[
+    {
+        "DisplayName": "Database Host",
+        "Category": "Database",
+        "Subcategory": "MySQL",
+        "Description": "The hostname of the database server. For local use, 'localhost' or '127.0.0.1'.",
+        "Keywords": "db,host,mysql,mariadb",
+        "FieldName": "DB_HOST",
+        "InputType": "text",
+        "ParamFieldName": "DB_HOST",
+        "DefaultValue": "localhost",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Name",
+        "Category": "Database",
+        "Subcategory": "MySQL",
+        "Description": "The name of the database to use for WordPress.",
+        "Keywords": "db,name",
+        "FieldName": "DB_NAME",
+        "InputType": "text",
+        "ParamFieldName": "DB_NAME",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database User",
+        "Category": "Database",
+        "Subcategory": "MySQL",
+        "Description": "The database user for accessing the WordPress database.",
+        "Keywords": "db,user",
+        "FieldName": "DB_USER",
+        "InputType": "text",
+        "ParamFieldName": "DB_USER",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Password",
+        "Category": "Database",
+        "Subcategory": "MySQL",
+        "Description": "The password for the database user.",
+        "Keywords": "db,password",
+        "FieldName": "DB_PASSWORD",
+        "InputType": "password",
+        "ParamFieldName": "DB_PASSWORD",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Redis Host",
+        "Category": "Database",
+        "Subcategory": "Redis",
+        "Description": "The hostname for the Redis server.",
+        "Keywords": "redis,host",
+        "FieldName": "REDIS_HOST",
+        "InputType": "text",
+        "ParamFieldName": "REDIS_HOST",
+        "DefaultValue": "localhost",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Redis Port",
+        "Category": "Database",
+        "Subcategory": "Redis",
+        "Description": "The port for the Redis server.",
+        "Keywords": "redis,port",
+        "FieldName": "REDIS_PORT",
+        "InputType": "number",
+        "ParamFieldName": "REDIS_PORT",
+        "DefaultValue": "6379",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Redis Password",
+        "Category": "Database",
+        "Subcategory": "Redis",
+        "Description": "The password for the Redis server (if applicable).",
+        "Keywords": "redis,password",
+        "FieldName": "REDIS_PASSWORD",
+        "InputType": "password",
+        "ParamFieldName": "REDIS_PASSWORD",
+        "DefaultValue": "",
+        "EnumValues": {}
+    }
+]

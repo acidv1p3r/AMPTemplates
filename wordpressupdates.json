@@ -1,0 +1,62 @@
+[
+    {
+        "UpdateStageName": "PHP Download",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://windows.php.net/downloads/releases/php-8.0.0-Win32-vs16-x64.zip",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "PHP Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://www.php.net/distributions/php-8.0.0.tar.gz",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "PHP Extract",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "powershell.exe",
+        "UpdateSourceArgs": "-NoProfile -Command \"cd wordpress; Remove-Item php -Recurse -Force -ErrorAction SilentlyContinue | Out-Null; Rename-Item -Path php-8.0.0-Win32-vs16-x64 -NewName php; if ($?) { Write-Output \\\"PHP v8.0.0 installed.\\\" }\"",
+        "SkipOnFailure": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "PHP Extract",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd wordpress && rm -rf php >/dev/null 2>&1 && tar xfv php-8.0.0.tar.gz >/dev/null 2>&1 && mv php-8.0.0 php >/dev/null 2>&1 && rm php-8.0.0.tar.gz && echo \\\"PHP v8.0.0 installed.\\\"\"",
+        "SkipOnFailure": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "WordPress Installation",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://wordpress.org/latest.zip",
+        "UpdateSourceTarget": "{{$FullRootDir}}wordpress",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "WordPress Installation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://wordpress.org/latest.tar.gz",
+        "UpdateSourceTarget": "{{$FullRootDir}}wordpress",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "OneShot": true
+    }
+]
