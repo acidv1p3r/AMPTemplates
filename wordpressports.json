@@ -1,14 +1,9 @@
 [
     {
-        "DisplayName": "HTTP Port",
-        "Category": "Network",
-        "Subcategory": "Ports",
-        "Description": "Port used for HTTP traffic.",
-        "Keywords": "http,port",
-        "FieldName": "HTTP_PORT",
-        "InputType": "number",
-        "ParamFieldName": "HTTP_PORT",
-        "DefaultValue": 1000,
-        "EnumValues": {}
+        "Protocol": "TCP",
+        "Port": "1000",
+        "Name": "Server Port",
+        "Description": "Port for server traffic",
+        "Ref": "ServerPort"
     }
 ]
