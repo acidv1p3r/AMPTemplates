@@ -1,6 +1,6 @@
 Meta.DisplayName=WordPress
 Meta.Description=WordPress Server
-Meta.OS=Windows, Linux
+Meta.OS=Linux
 Meta.AarchSupport=Native
 Meta.Arch=All
 Meta.Author=Acidv1p3r
