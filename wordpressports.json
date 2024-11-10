@@ -10,17 +10,5 @@
         "ParamFieldName": "HTTP_PORT",
         "DefaultValue": 1000,
         "EnumValues": {}
-    },
-    {
-        "DisplayName": "HTTPS Port",
-        "Category": "Network",
-        "Subcategory": "Ports",
-        "Description": "Port used for HTTPS traffic.",
-        "Keywords": "https,port,ssl",
-        "FieldName": "HTTPS_PORT",
-        "InputType": "number",
-        "ParamFieldName": "HTTPS_PORT",
-        "DefaultValue": 1001,
-        "EnumValues": {}
     }
 ]
