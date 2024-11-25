@@ -5,13 +5,5 @@
         "Name": "Server Port",
         "Description": "Port for Uptime Kuma Web Interface",
         "Ref": "ServerPort"
-    },
-    {
-        "Protocol": "TCP",
-        "Port": "3002",
-        "Name": "Admin Port",
-        "Description": "Port for administrative connections to Uptime Kuma",
-        "Ref": "AdminPort"
     }
 ]
-
