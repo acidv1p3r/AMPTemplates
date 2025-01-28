@@ -1,5 +1,5 @@
 App.AdminMethod=STDIO
-App.ApplicationPort1=3001
+App.ApplicationPort1=1000
 App.ApplicationReadyMode=Immediate
 App.BaseDirectory=./wordpress/
 App.CommandLineArgs=+ip {{$ApplicationIPBinding}} +port {{$ApplicationPort1}} +queryport {{$ApplicationPort2}} +rconpassword "{{$RemoteAdminPassword}}" +maxusers {{$MaxUsers}} {{$FormattedArgs}}
